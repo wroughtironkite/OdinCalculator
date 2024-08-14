@@ -1,17 +1,17 @@
 function add(num1, num2) {
-    return num1 + num2;
+    return (num1 + num2).toString();
 }
 
 function subtract(num1, num2) {
-    return num1 - num2;
+    return (num1 - num2).toString();
 }
 
 function multiply(num1, num2) {
-    return num1 * num2;
+    return (num1 * num2).toString();
 }
 
 function divide(num1, num2) {
-    if (num2 != 0 && num2 != "0") return num1 / num2;
+    if (num2 != 0 && num2 != "0") return (num1 / num2).toString();
     if (num2 == 0 || num2 == "0") return "ERROR";
 }
 
@@ -38,6 +38,9 @@ function outputRefresh() {
 
    
     else {
+        let slicepoint = 15;
+        if (currentNumber * 1 < 0) slicepoint = 16;
+        currentNumber = currentNumber.slice(0, slicepoint);
         output.textContent = currentNumber;
     }
 }
@@ -83,12 +86,12 @@ clear.addEventListener("click", () => refresh());
 
 posneg.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "-";
-    else currentNumber = currentNumber * -1;
+    else currentNumber = (currentNumber * -1).toString();
     outputRefresh();
 })
 
 percent.addEventListener("click", () => {
-    if (currentNumber != null) currentNumber = currentNumber/100;
+    if (currentNumber != null) currentNumber = (currentNumber/100).toString();
     outputRefresh();
 })
 
@@ -97,7 +100,7 @@ one.addEventListener("click", () => {
         equalPressed = false;
         currentNumber = "1";
         } 
-    else currentNumber = (currentNumber + "1")*1;
+    else currentNumber = (currentNumber + "1");
     outputRefresh();
 })
 
@@ -106,7 +109,7 @@ two.addEventListener("click", () => {
         equalPressed = false;
         currentNumber = "2";
         }
-    else currentNumber = (currentNumber + "2")*1;
+    else currentNumber = (currentNumber + "2");
     outputRefresh();
 })
 
@@ -115,7 +118,7 @@ three.addEventListener("click", () => {
         equalPressed = false; 
         currentNumber = "3";
         }
-    else currentNumber = (currentNumber + "3")*1;
+    else currentNumber = (currentNumber + "3");
     outputRefresh();
 })
 
@@ -124,7 +127,7 @@ four.addEventListener("click", () => {
         equalPressed = false; 
         currentNumber = "4";
         }
-    else currentNumber = (currentNumber + "4")*1;
+    else currentNumber = (currentNumber + "4");
     outputRefresh();
 })
 
@@ -133,7 +136,7 @@ five.addEventListener("click", () => {
         equalPressed = false; 
         currentNumber = "5";
         }
-    else currentNumber = (currentNumber + "5")*1;
+    else currentNumber = (currentNumber + "5");
     outputRefresh();
 })
 
@@ -142,7 +145,7 @@ six.addEventListener("click", () => {
         equalPressed = false; 
         currentNumber = "6";
         }
-    else currentNumber = (currentNumber + "6")*1;
+    else currentNumber = (currentNumber + "6");
     outputRefresh();
 })
 
@@ -151,7 +154,7 @@ seven.addEventListener("click", () => {
         equalPressed = false;
         currentNumber = "7";
         }
-    else currentNumber = (currentNumber + "7")*1;
+    else currentNumber = (currentNumber + "7");
     outputRefresh();
 })
 
@@ -160,7 +163,7 @@ eight.addEventListener("click", () => {
         equalPressed = false;
         currentNumber = "8";
         }
-    else currentNumber = (currentNumber + "8")*1;
+    else currentNumber = (currentNumber + "8");
     outputRefresh();
 })
 
@@ -169,7 +172,7 @@ nine.addEventListener("click", () => {
         equalPressed = false;
         currentNumber = "9";
         }
-    else currentNumber = (currentNumber + "9")*1;
+    else currentNumber = (currentNumber + "9");
     outputRefresh();
 })
 
@@ -178,7 +181,7 @@ zero.addEventListener("click", () => {
         equalPressed = false; 
         currentNumber = "0";
         }
-    else currentNumber = (currentNumber + "0")*1;
+    else currentNumber = (currentNumber + "0");
     outputRefresh();
 })
 
@@ -193,8 +196,7 @@ decimal.addEventListener("click", () => {
 
 del.addEventListener("click", () => {
     if (equalPressed == false) {
-        let tempNumber = currentNumber.toString();
-        currentNumber = tempNumber.slice(0, -1) * 1;
+        currentNumber = currentNumber.slice(0, -1);
         }
     if (equalPressed == true) {
         currentNumber = null;
@@ -210,9 +212,9 @@ plus.addEventListener("click", () => {
             currentNumber = solve(firstNumber, secondNumber, operand);
         }
 
-    outputRefresh();
     operand = '+';
     firstNumber = currentNumber * 1;
+    outputRefresh();
     secondNumber = null;
     currentNumber = null;
     }
@@ -225,9 +227,9 @@ minus.addEventListener("click", () => {
             currentNumber = solve(firstNumber, secondNumber, operand);
         }
 
-    outputRefresh();
     operand = '-';
     firstNumber = currentNumber * 1;
+    outputRefresh();
     secondNumber = null;
     currentNumber = null;
     }
@@ -242,9 +244,9 @@ multiplication.addEventListener("click", () => {
             currentNumber = solve(firstNumber, secondNumber, operand);
         }
 
-    outputRefresh();
     operand = '*';
     firstNumber = currentNumber * 1;
+    outputRefresh();
     secondNumber = null;
     currentNumber = null;
     }
@@ -257,9 +259,9 @@ division.addEventListener("click", () => {
             currentNumber = solve(firstNumber, secondNumber, operand);
         }
 
-    outputRefresh();
     operand = '/';
     firstNumber = currentNumber * 1;
+    outputRefresh();
     secondNumber = null;
     currentNumber = null;
     }
@@ -277,7 +279,6 @@ equals.addEventListener("click", () => {
     firstNumber = null;
     secondNumber = null;
     equalPressed = true;
-    //currentNumber = null;
     }
 })
 
