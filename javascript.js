@@ -11,14 +11,15 @@ function multiply(num1, num2) {
 }
 
 function divide(num1, num2) {
-    return num1 / num2;
+    if (num2 != 0 && num2 != "0") return num1 / num2;
+    if (num2 == 0 || num2 == "0") return "ERROR";
 }
 
 function solve(num1, num2, operand) {
-    if (operand == 'add') return add(num1, num2);
-    if (operand == 'subtract') return subtract(num1, num2);
-    if (operand == 'multiply') return multiply(num1, num2);
-    if (operand == 'divide') return divide(num1, num2);
+    if (operand == '+') return add(num1, num2);
+    if (operand == '-') return subtract(num1, num2);
+    if (operand == '*') return multiply(num1, num2);
+    if (operand == '/') return divide(num1, num2);
 }
 
 function refresh() {
@@ -30,11 +31,12 @@ function refresh() {
     outputRefresh();
 }
 
-function outputRefresh() {
+function outputRefresh() {   
     if (currentNumber == null) {
         output.textContent = "";
     }
 
+   
     else {
         output.textContent = currentNumber;
     }
@@ -68,6 +70,8 @@ let firstNumber = null;
 let secondNumber = null;
 let operand = null;
 let currentNumber = null;
+//placeholder to check if decimals
+let hasDecimal = false;
 
 clear.addEventListener("click", () => refresh());
 
@@ -84,64 +88,139 @@ percent.addEventListener("click", () => {
 
 one.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "1";
-    else currentNumber = currentNumber + "1";
+    else currentNumber = (currentNumber + "1")*1;
     outputRefresh();
 })
 
 two.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "2";
-    else currentNumber = currentNumber + "2";
+    else currentNumber = (currentNumber + "2")*1;
     outputRefresh();
 })
 
 three.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "3";
-    else currentNumber = currentNumber + "3";
+    else currentNumber = (currentNumber + "3")*1;
     outputRefresh();
 })
 
 four.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "4";
-    else currentNumber = currentNumber + "4";
+    else currentNumber = (currentNumber + "4")*1;
     outputRefresh();
 })
 
 five.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "5";
-    else currentNumber = currentNumber + "5";
+    else currentNumber = (currentNumber + "5")*1;
     outputRefresh();
 })
 
 six.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "6";
-    else currentNumber = currentNumber + "6";
+    else currentNumber = (currentNumber + "6")*1;
     outputRefresh();
 })
 
 seven.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "7";
-    else currentNumber = currentNumber + "7";
+    else currentNumber = (currentNumber + "7")*1;
     outputRefresh();
 })
 
 eight.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "8";
-    else currentNumber = currentNumber + "8";
+    else currentNumber = (currentNumber + "8")*1;
     outputRefresh();
 })
 
 nine.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "9";
-    else currentNumber = currentNumber + "9";
+    else currentNumber = (currentNumber + "9")*1;
     outputRefresh();
 })
 
 zero.addEventListener("click", () => {
-    if (currentNumber != null && currentNumber != "-") currentNumber = currentNumber + "0";
+    if (currentNumber == null) currentNumber = "0";
+    else currentNumber = (currentNumber + "0")*1;
     outputRefresh();
 })
 
+plus.addEventListener("click", () => {
+    if (currentNumber != null) {
+        if (operand != null) {
+            secondNumber = currentNumber * 1;
+            currentNumber = solve(firstNumber, secondNumber, operand);
+        }
+
+    outputRefresh();
+    operand = '+';
+    firstNumber = currentNumber * 1;
+    secondNumber = null;
+    currentNumber = null;
+    }
+})
+
+minus.addEventListener("click", () => {
+    if (currentNumber != null) {
+        if (operand != null) {
+            secondNumber = currentNumber * 1;
+            currentNumber = solve(firstNumber, secondNumber, operand);
+        }
+
+    outputRefresh();
+    operand = '-';
+    firstNumber = currentNumber * 1;
+    secondNumber = null;
+    currentNumber = null;
+    }
 
 
+})
+
+multiplication.addEventListener("click", () => {
+    if (currentNumber != null) {
+        if (operand != null) {
+            secondNumber = currentNumber * 1;
+            currentNumber = solve(firstNumber, secondNumber, operand);
+        }
+
+    outputRefresh();
+    operand = '*';
+    firstNumber = currentNumber * 1;
+    secondNumber = null;
+    currentNumber = null;
+    }
+})
+
+division.addEventListener("click", () => {
+    if (currentNumber != null) {
+        if (operand != null) {
+            secondNumber = currentNumber * 1;
+            currentNumber = solve(firstNumber, secondNumber, operand);
+        }
+
+    outputRefresh();
+    operand = '/';
+    firstNumber = currentNumber * 1;
+    secondNumber = null;
+    currentNumber = null;
+    }
+})
+
+equals.addEventListener("click", () => {
+    if (currentNumber != null) {
+        if (operand != null) {
+            secondNumber = currentNumber * 1;
+            currentNumber = solve(firstNumber, secondNumber, operand);
+        }
+
+    outputRefresh();
+    operand = null;
+    firstNumber = null;
+    secondNumber = null;
+    currentNumber = null;
+    }
+})
 
 
