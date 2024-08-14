@@ -227,9 +227,6 @@ equals.addEventListener("click", () => {
 
     outputRefresh();
     operand = null;
-    firstNumber = null;
-    secondNumber = null;
-    currentNumber = null;
     }
 })
 
