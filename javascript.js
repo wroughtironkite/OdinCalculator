@@ -281,4 +281,27 @@ equals.addEventListener("click", () => {
     }
 })
 
-
+document.addEventListener("keydown", function(key) {
+    if (key.code == 'Digit0' || key.code == 'Numpad0') zero.click();
+    if (key.code == 'Digit1' || key.code == 'Numpad1') one.click();
+    if (key.code == 'Digit2' || key.code == 'Numpad2') two.click();
+    if (key.code == 'Digit3' || key.code == 'Numpad3') three.click();
+    if (key.code == 'Digit4' || key.code == 'Numpad4') four.click();
+    if (key.code == 'Digit5' || key.code == 'Numpad5') five.click();
+    if (key.code == 'Digit6' || key.code == 'Numpad6') six.click();
+    if (key.code == 'Digit7' || key.code == 'Numpad7') seven.click();
+    if (key.code == 'Digit8' || key.code == 'Numpad8') eight.click();
+    if (key.code == 'Digit9' || key.code == 'Numpad9') nine.click();
+    if (key.key == '.' || key.code == 'NumpadDecimal') decimal.click();
+    if (key.key == '+' || key.code == 'NumpadAdd') plus.click();
+    if (key.key == '-' || key.code == 'NumpadSubtract') {
+        if (currentNumber == null) posneg.click();
+        else minus.click();
+        }
+    if (key.key == '*' || key.code == 'NumpadMultiply') multiplication.click();
+    if (key.key == '/' || key.code == 'NumpadDivide') division.click();
+    if (key.key == '=' || key.code == 'NumpadEnter' || key.code == 'Enter') equals.click();
+    if (key.key == '%') percent.click();
+    if (key.code == 'Backspace') del.click();
+    if (key.code == 'Escape') clear.click();
+})
