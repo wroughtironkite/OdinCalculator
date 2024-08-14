@@ -88,11 +88,13 @@ posneg.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "-";
     else currentNumber = (currentNumber * -1).toString();
     outputRefresh();
+    equalPressed = false;
 })
 
 percent.addEventListener("click", () => {
     if (currentNumber != null) currentNumber = (currentNumber/100).toString();
     outputRefresh();
+    equalPressed = false;
 })
 
 one.addEventListener("click", () => {
@@ -217,6 +219,7 @@ plus.addEventListener("click", () => {
     outputRefresh();
     secondNumber = null;
     currentNumber = null;
+    equalPressed = false;
     }
 })
 
@@ -232,6 +235,7 @@ minus.addEventListener("click", () => {
     outputRefresh();
     secondNumber = null;
     currentNumber = null;
+    equalPressed = false;
     }
 
 
@@ -249,6 +253,7 @@ multiplication.addEventListener("click", () => {
     outputRefresh();
     secondNumber = null;
     currentNumber = null;
+    equalPressed = false;
     }
 })
 
@@ -264,6 +269,7 @@ division.addEventListener("click", () => {
     outputRefresh();
     secondNumber = null;
     currentNumber = null;
+    equalPressed = false;
     }
 })
 
