@@ -196,7 +196,10 @@ del.addEventListener("click", () => {
         let tempNumber = currentNumber.toString();
         currentNumber = tempNumber.slice(0, -1) * 1;
         }
-    if (equalPressed == true) currentNumber = null;
+    if (equalPressed == true) {
+        currentNumber = null;
+        equalPressed = false;
+        }
     outputRefresh();
 })
 
