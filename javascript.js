@@ -70,3 +70,78 @@ let operand = null;
 let currentNumber = null;
 
 clear.addEventListener("click", () => refresh());
+
+posneg.addEventListener("click", () => {
+    if (currentNumber == null) currentNumber = "-";
+    else currentNumber = currentNumber * -1;
+    outputRefresh();
+})
+
+percent.addEventListener("click", () => {
+    if (currentNumber != null) currentNumber = currentNumber/100;
+    outputRefresh();
+})
+
+one.addEventListener("click", () => {
+    if (currentNumber == null) currentNumber = "1";
+    else currentNumber = currentNumber + "1";
+    outputRefresh();
+})
+
+two.addEventListener("click", () => {
+    if (currentNumber == null) currentNumber = "2";
+    else currentNumber = currentNumber + "2";
+    outputRefresh();
+})
+
+three.addEventListener("click", () => {
+    if (currentNumber == null) currentNumber = "3";
+    else currentNumber = currentNumber + "3";
+    outputRefresh();
+})
+
+four.addEventListener("click", () => {
+    if (currentNumber == null) currentNumber = "4";
+    else currentNumber = currentNumber + "4";
+    outputRefresh();
+})
+
+five.addEventListener("click", () => {
+    if (currentNumber == null) currentNumber = "5";
+    else currentNumber = currentNumber + "5";
+    outputRefresh();
+})
+
+six.addEventListener("click", () => {
+    if (currentNumber == null) currentNumber = "6";
+    else currentNumber = currentNumber + "6";
+    outputRefresh();
+})
+
+seven.addEventListener("click", () => {
+    if (currentNumber == null) currentNumber = "7";
+    else currentNumber = currentNumber + "7";
+    outputRefresh();
+})
+
+eight.addEventListener("click", () => {
+    if (currentNumber == null) currentNumber = "8";
+    else currentNumber = currentNumber + "8";
+    outputRefresh();
+})
+
+nine.addEventListener("click", () => {
+    if (currentNumber == null) currentNumber = "9";
+    else currentNumber = currentNumber + "9";
+    outputRefresh();
+})
+
+zero.addEventListener("click", () => {
+    if (currentNumber != null && currentNumber != "-") currentNumber = currentNumber + "0";
+    outputRefresh();
+})
+
+
+
+
+
