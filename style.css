@@ -1,0 +1,42 @@
+.calculator {
+    height: 720px;
+    width: 600px;
+    background-color: black;
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: auto;
+}
+
+#outputscreen {
+    height: 100px;
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: lightgray;
+    border: 2px solid gray;
+}
+
+.buttonpanel {
+    height: 440px;
+    width: 550px;
+    margin: 25px;
+}
+
+button {
+    height:100px;
+    width: 130px;
+    background-color: azure;
+    margin: 2px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 42px;
+}
+
+#zero {
+    width: 268px;
+}
