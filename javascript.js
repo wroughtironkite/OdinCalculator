@@ -42,6 +42,11 @@ function outputRefresh() {
     }
 }
 
+function hasDecimal(number) {
+    number = number.toString();
+    return (number.includes("."));
+}
+
 
 //define output and all buttons
 const output = document.querySelector("#outputscreen");
@@ -70,8 +75,7 @@ let firstNumber = null;
 let secondNumber = null;
 let operand = null;
 let currentNumber = null;
-//placeholder to check if decimals
-let hasDecimal = false;
+
 
 clear.addEventListener("click", () => refresh());
 
@@ -143,6 +147,12 @@ nine.addEventListener("click", () => {
 zero.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "0";
     else currentNumber = (currentNumber + "0")*1;
+    outputRefresh();
+})
+
+decimal.addEventListener("click", () => {
+    if (currentNumber == null) currentNumber = "0.";
+    if (currentNumber != null && hasDecimal(currentNumber) == false) currentNumber = currentNumber + ".";
     outputRefresh();
 })
 
