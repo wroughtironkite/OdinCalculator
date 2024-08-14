@@ -69,12 +69,14 @@ const plus = document.querySelector("#plus");
 const zero = document.querySelector("#zero");
 const decimal = document.querySelector("#decimal");
 const equals = document.querySelector("#equals");
+const del = document.querySelector("#delete");
 
 //define input numbers (2), operand, and current number
 let firstNumber = null;
 let secondNumber = null;
 let operand = null;
 let currentNumber = null;
+let equalPressed = false;
 
 
 clear.addEventListener("click", () => refresh());
@@ -91,68 +93,110 @@ percent.addEventListener("click", () => {
 })
 
 one.addEventListener("click", () => {
-    if (currentNumber == null) currentNumber = "1";
+    if (currentNumber == null || equalPressed == true) {
+        equalPressed = false;
+        currentNumber = "1";
+        } 
     else currentNumber = (currentNumber + "1")*1;
     outputRefresh();
 })
 
 two.addEventListener("click", () => {
-    if (currentNumber == null) currentNumber = "2";
+    if (currentNumber == null || equalPressed == true) {
+        equalPressed = false;
+        currentNumber = "2";
+        }
     else currentNumber = (currentNumber + "2")*1;
     outputRefresh();
 })
 
 three.addEventListener("click", () => {
-    if (currentNumber == null) currentNumber = "3";
+    if (currentNumber == null || equalPressed == true) {
+        equalPressed = false; 
+        currentNumber = "3";
+        }
     else currentNumber = (currentNumber + "3")*1;
     outputRefresh();
 })
 
 four.addEventListener("click", () => {
-    if (currentNumber == null) currentNumber = "4";
+    if (currentNumber == null || equalPressed == true) {
+        equalPressed = false; 
+        currentNumber = "4";
+        }
     else currentNumber = (currentNumber + "4")*1;
     outputRefresh();
 })
 
 five.addEventListener("click", () => {
-    if (currentNumber == null) currentNumber = "5";
+    if (currentNumber == null || equalPressed == true) {
+        equalPressed = false; 
+        currentNumber = "5";
+        }
     else currentNumber = (currentNumber + "5")*1;
     outputRefresh();
 })
 
 six.addEventListener("click", () => {
-    if (currentNumber == null) currentNumber = "6";
+    if (currentNumber == null || equalPressed == true) {
+        equalPressed = false; 
+        currentNumber = "6";
+        }
     else currentNumber = (currentNumber + "6")*1;
     outputRefresh();
 })
 
 seven.addEventListener("click", () => {
-    if (currentNumber == null) currentNumber = "7";
+    if (currentNumber == null || equalPressed == true) {
+        equalPressed = false;
+        currentNumber = "7";
+        }
     else currentNumber = (currentNumber + "7")*1;
     outputRefresh();
 })
 
 eight.addEventListener("click", () => {
-    if (currentNumber == null) currentNumber = "8";
+    if (currentNumber == null || equalPressed == true) {
+        equalPressed = false;
+        currentNumber = "8";
+        }
     else currentNumber = (currentNumber + "8")*1;
     outputRefresh();
 })
 
 nine.addEventListener("click", () => {
-    if (currentNumber == null) currentNumber = "9";
+    if (currentNumber == null || equalPressed == true) {
+        equalPressed = false;
+        currentNumber = "9";
+        }
     else currentNumber = (currentNumber + "9")*1;
     outputRefresh();
 })
 
 zero.addEventListener("click", () => {
-    if (currentNumber == null) currentNumber = "0";
+    if (currentNumber == null || equalPressed == true) {
+        equalPressed = false; 
+        currentNumber = "0";
+        }
     else currentNumber = (currentNumber + "0")*1;
     outputRefresh();
 })
 
 decimal.addEventListener("click", () => {
-    if (currentNumber == null) currentNumber = "0.";
+    if (currentNumber == null || equalPressed == true) {
+        equalPressed = false;
+        currentNumber = "0.";
+        }
     if (currentNumber != null && hasDecimal(currentNumber) == false) currentNumber = currentNumber + ".";
+    outputRefresh();
+})
+
+del.addEventListener("click", () => {
+    if (equalPressed == false) {
+        let tempNumber = currentNumber.toString();
+        currentNumber = tempNumber.slice(0, -1) * 1;
+        }
+    if (equalPressed == true) currentNumber = null;
     outputRefresh();
 })
 
@@ -229,7 +273,8 @@ equals.addEventListener("click", () => {
     operand = null;
     firstNumber = null;
     secondNumber = null;
-    currentNumber = null;
+    equalPressed = true;
+    //currentNumber = null;
     }
 })
 
