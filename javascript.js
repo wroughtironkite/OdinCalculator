@@ -32,6 +32,9 @@ function refresh() {
 }
 
 function outputRefresh() {   
+
+    equalPressed = false;
+
     if (currentNumber == null) {
         output.textContent = "";
     }
@@ -88,122 +91,82 @@ posneg.addEventListener("click", () => {
     if (currentNumber == null) currentNumber = "-";
     else currentNumber = (currentNumber * -1).toString();
     outputRefresh();
-    equalPressed = false;
 })
 
 percent.addEventListener("click", () => {
     if (currentNumber != null) currentNumber = (currentNumber/100).toString();
     outputRefresh();
-    equalPressed = false;
 })
 
 one.addEventListener("click", () => {
-    if (currentNumber == null || equalPressed == true) {
-        equalPressed = false;
-        currentNumber = "1";
-        } 
+    if (currentNumber == null || equalPressed == true) currentNumber = "1";
     else currentNumber = (currentNumber + "1");
     outputRefresh();
 })
 
 two.addEventListener("click", () => {
-    if (currentNumber == null || equalPressed == true) {
-        equalPressed = false;
-        currentNumber = "2";
-        }
+    if (currentNumber == null || equalPressed == true) currentNumber = "2";
     else currentNumber = (currentNumber + "2");
     outputRefresh();
 })
 
 three.addEventListener("click", () => {
-    if (currentNumber == null || equalPressed == true) {
-        equalPressed = false; 
-        currentNumber = "3";
-        }
+    if (currentNumber == null || equalPressed == true) currentNumber = "3";
     else currentNumber = (currentNumber + "3");
     outputRefresh();
 })
 
 four.addEventListener("click", () => {
-    if (currentNumber == null || equalPressed == true) {
-        equalPressed = false; 
-        currentNumber = "4";
-        }
+    if (currentNumber == null || equalPressed == true) currentNumber = "4";
     else currentNumber = (currentNumber + "4");
     outputRefresh();
 })
 
 five.addEventListener("click", () => {
-    if (currentNumber == null || equalPressed == true) {
-        equalPressed = false; 
-        currentNumber = "5";
-        }
+    if (currentNumber == null || equalPressed == true) currentNumber = "5";
     else currentNumber = (currentNumber + "5");
     outputRefresh();
 })
 
 six.addEventListener("click", () => {
-    if (currentNumber == null || equalPressed == true) {
-        equalPressed = false; 
-        currentNumber = "6";
-        }
+    if (currentNumber == null || equalPressed == true) currentNumber = "6";
     else currentNumber = (currentNumber + "6");
     outputRefresh();
 })
 
 seven.addEventListener("click", () => {
-    if (currentNumber == null || equalPressed == true) {
-        equalPressed = false;
-        currentNumber = "7";
-        }
+    if (currentNumber == null || equalPressed == true) currentNumber = "7";
     else currentNumber = (currentNumber + "7");
     outputRefresh();
 })
 
 eight.addEventListener("click", () => {
-    if (currentNumber == null || equalPressed == true) {
-        equalPressed = false;
-        currentNumber = "8";
-        }
+    if (currentNumber == null || equalPressed == true) currentNumber = "8";
     else currentNumber = (currentNumber + "8");
     outputRefresh();
 })
 
 nine.addEventListener("click", () => {
-    if (currentNumber == null || equalPressed == true) {
-        equalPressed = false;
-        currentNumber = "9";
-        }
+    if (currentNumber == null || equalPressed == true) currentNumber = "9";
     else currentNumber = (currentNumber + "9");
     outputRefresh();
 })
 
 zero.addEventListener("click", () => {
-    if (currentNumber == null || equalPressed == true) {
-        equalPressed = false; 
-        currentNumber = "0";
-        }
+    if (currentNumber == null || equalPressed == true) currentNumber = "0";
     else currentNumber = (currentNumber + "0");
     outputRefresh();
 })
 
 decimal.addEventListener("click", () => {
-    if (currentNumber == null || equalPressed == true) {
-        equalPressed = false;
-        currentNumber = "0.";
-        }
+    if (currentNumber == null || equalPressed == true) currentNumber = "0.";
     if (currentNumber != null && hasDecimal(currentNumber) == false) currentNumber = currentNumber + ".";
     outputRefresh();
 })
 
 del.addEventListener("click", () => {
-    if (equalPressed == false) {
-        currentNumber = currentNumber.slice(0, -1);
-        }
-    if (equalPressed == true) {
-        currentNumber = null;
-        equalPressed = false;
-        }
+    if (equalPressed == false) currentNumber = currentNumber.slice(0, -1);
+    if (equalPressed == true) currentNumber = null;
     outputRefresh();
 })
 
@@ -219,7 +182,6 @@ plus.addEventListener("click", () => {
     outputRefresh();
     secondNumber = null;
     currentNumber = null;
-    equalPressed = false;
     }
 })
 
@@ -235,7 +197,6 @@ minus.addEventListener("click", () => {
     outputRefresh();
     secondNumber = null;
     currentNumber = null;
-    equalPressed = false;
     }
 
 
@@ -253,7 +214,6 @@ multiplication.addEventListener("click", () => {
     outputRefresh();
     secondNumber = null;
     currentNumber = null;
-    equalPressed = false;
     }
 })
 
@@ -269,7 +229,6 @@ division.addEventListener("click", () => {
     outputRefresh();
     secondNumber = null;
     currentNumber = null;
-    equalPressed = false;
     }
 })
 
